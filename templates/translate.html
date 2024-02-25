@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            /* background-color: #567453; */
+        }
+        .top-nav {
+            background-color: #2a4128;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 7vh;
+        }
+        .main{
+            /* border: 2px solid black; */
+            height: 90vh;
+            margin: 5px;
+            display: flex;
+            flex-direction: row;
+            padding: 5px;
+        }
+        .call{
+            width: 60%;
+            /* border: 2px solid black; */
+            height: 90vh;
+        }
+        .scrolling-list {
+            padding-left: 15px;
+            height: 100%;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        .list-item {
+            display: flex;
+            flex-direction: row;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            width: 100%;
+        }
+        .list-item img{
+            height: 200px;
+            width: 200px;
+        }
+        .list-item h3{
+            margin-left: 20px;
+            font-size: 30px;
+        }
+        .btn {
+            font-size: 15px;
+            padding: 10px 20px;
+            background-color: #17df89;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+        .video{
+            border: 4px solid black;
+            border-radius: 8px;
+            height: 60vh;
+            background-image: url(maxresdefault.jpg);
+        }
+        .images{
+            height: 23vh;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            padding: 5px;
+            border-radius: 8px;
+        }
+        .image1{
+            border: 4px solid black;
+            font-size: 50px;
+            border-radius: 8px;
+            height: 100%;
+            width: 50%;
+            margin: 10px 10px 10px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image2{
+            border: 4px solid black;
+            font-size: 50px;
+            border-radius: 8px;
+            margin: 10px;
+            height: 100%;
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        input{
+            width: 80%;
+            padding: 8px;
+            margin-left: 15px;
+            border: 2px solid black;
+            border-radius: 12px;
+            font-size: 30px;
+        }
+        </style>
+</head>
+<body>
+    <div class="top-nav">
+        <div class="brand" style="font-size: 30px;">SIGN LANGUAGE TRANSLATE</div>
+        <div class="dictionary">
+            <button class="btn">Exit</button>
+
+        </div>
+    </div>
+    <div class="main">
+        <div class="call">
+            <div class="video">
+                <img src="{{ url_for('video') }}" width="100%" height="100%"/>
+            </div>
+            <div class="images">
+                <div class="image1">
+                    ENGLISH
+                </div>
+                <div class="image2" id="detectedsign"></div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div>
+                <input type="search" id="search" onclick="toggler()" placeholder="Search a Language">
+            </div>
+            <div class="scrolling-list">
+                <div class="list-item">
+                    <span><h3>English</h3></span>
+                </div>
+                <div class="list-item">
+                    <span><h3>Hindi</h3></span>
+                </div>
+                <div class="list-item">
+                    <span><h3>Urdu</h3></span>
+                </div>
+                <div class="list-item">
+                    <span><h3>Tamil</h3></span>
+                </div>
+                <div class="list-item">
+                    <span><h3>Telugu</h3></span>
+                </div>
+                <div class="list-item">
+                    <span><h3>Japanese</h3></span>
+                </div>
+                <div class="list-item">
+                    <span><h3>Spanish</h3></span>
+                </div>
+                <div class="list-item">
+                    <span><h3>French</h3></span>
+                </div>
+                <div class="list-item">
+                    <span><h3>Korean</h3></span>
+                </div>
+                <div class="list-item">
+                    <span><h3>Chinese</h3></span>
+                </div>
+                </div>
+                <!-- Add more list items as needed -->
+            </div>
+        </div>
+    </div>
+    <script>
+        function fetchData() {
+            fetch('/detectedsign')
+                .then(response => response.json())
+                .then(data => {
+                    // Update the content of the element with the fetched data
+                    document.getElementById('detectedsign').innerHTML = data.sign;
+                })
+                .catch(error => console.error('Error fetching dynamic data:', error));
+        }
+
+        // Fetch data initially when the page loads
+        fetchData();
+
+        // Update data every 5 seconds (for example)
+        setInterval(fetchData, 100);
+    </script>
+</body>
+</html>
