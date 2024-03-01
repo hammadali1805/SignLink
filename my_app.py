@@ -1,4 +1,4 @@
-from flask import Flask,render_template,Response, jsonify
+from flask import Flask,render_template,Response, jsonify, request
 import csv
 import copy
 import argparse
@@ -406,7 +406,7 @@ def get_args():
 
     return args
 
-def generate_frames():
+def generate_frames(use_brect=True):
     global selected_sign_index
     global selected_sign
     global no_of_times_matched
@@ -422,7 +422,7 @@ def generate_frames():
     min_detection_confidence = args.min_detection_confidence
     min_tracking_confidence = args.min_tracking_confidence
 
-    use_brect = True
+    use_brect = use_brect
 
     # Camera preparation ###############################################################
     cap = cv.VideoCapture(cap_device)
@@ -562,6 +562,10 @@ def generate_frames():
 def translate():
     return render_template('translate.html')
 
+@app.route('/learn')
+def learn():
+    return render_template('learn.html')
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -576,9 +580,13 @@ def detectedsign():
     data = {'sign': detected_sign}
     return jsonify(data)
 
-@app.route('/video')
-def video():
-    return Response(generate_frames(),mimetype='multipart/x-mixed-replace; boundary=frame')
+@app.route('/video/<usecase>')
+def video(usecase):
+    if usecase=='learn':
+        use_brect = True
+    elif usecase=='translate':
+        use_brect=False
+    return Response(generate_frames(use_brect=use_brect),mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__=="__main__":
     app.run(debug=True)
