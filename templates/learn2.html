@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/ico" href="static/images/favicon.ico">
-    <title>SignLink | Translate</title>
+    <title>SignLink | Learn</title>
     <style>
         body {
             margin: 0;
@@ -53,7 +53,7 @@
         }
         .list-item h3{
             margin-left: 20px;
-            font-size: 30px;
+            font-size: 50px;
         }
         .btn {
             font-size: 15px;
@@ -81,7 +81,6 @@
         }
         .image1{
             border: 4px solid black;
-            font-size: 50px;
             border-radius: 8px;
             height: 100%;
             width: 50%;
@@ -113,7 +112,7 @@
 </head>
 <body>
     <div class="top-nav">
-        <div class="brand" style="font-size: 30px;">SIGN LANGUAGE TRANSLATE</div>
+        <div class="brand" style="font-size: 30px;">SIGN LANGUAGE CLASSROOM</div>
         <div class="dictionary">
             <button class="btn">Exit</button>
 
@@ -122,49 +121,43 @@
     <div class="main">
         <div class="call">
             <div class="video">
-                <img src="{{ url_for('video', usecase='translate') }}" width="100%" height="100%"/>
+                <img src="{{ url_for('video', usecase='learn') }}" width="100%" height="100%"/>
             </div>
             <div class="images">
                 <div class="image1">
-                    ENGLISH
+                    <img id="sign-image" src="" alt="Sign-Image" width="100%" height="100%">
                 </div>
-                <div class="image2" id="detectedsign"></div>
+                <div class="image2" id="sign"></div>
             </div>
         </div>
         <div class="sidebar">
             <div>
-                <input type="search" id="search" onclick="toggler()" placeholder="Search a Language">
+                <input type="search" id="search" onclick="toggler()" placeholder="Search a Sign">
             </div>
             <div class="scrolling-list">
                 <div class="list-item">
-                    <span><h3>English</h3></span>
+                    <img src="/static/images/Hello.jpg" alt="img">
+                    <span><h3>HELLO</h3></span>
                 </div>
                 <div class="list-item">
-                    <span><h3>Hindi</h3></span>
+                    <img src="/static/images/Yes.jpg" alt="img">
+                    <span><h3>YES</h3></span>
                 </div>
                 <div class="list-item">
-                    <span><h3>Urdu</h3></span>
+                    <img src="/static/images/Pointer.jpg" alt="img">
+                    <span><h3>POINTER</h3></span>
                 </div>
                 <div class="list-item">
-                    <span><h3>Tamil</h3></span>
+                    <img src="/static/images/Ok.jpg" alt="img">
+                    <span><h3>OK</h3></span>
                 </div>
                 <div class="list-item">
-                    <span><h3>Telugu</h3></span>
+                    <img src="/static/images/Like.jpg" alt="img">
+                    <span><h3>LIKE</h3></span>
                 </div>
                 <div class="list-item">
-                    <span><h3>Japanese</h3></span>
-                </div>
-                <div class="list-item">
-                    <span><h3>Spanish</h3></span>
-                </div>
-                <div class="list-item">
-                    <span><h3>French</h3></span>
-                </div>
-                <div class="list-item">
-                    <span><h3>Korean</h3></span>
-                </div>
-                <div class="list-item">
-                    <span><h3>Chinese</h3></span>
+                    <img src="/static/images/Victory.jpg" alt="img">
+                    <span><h3>VICTORY</h3></span>
                 </div>
                 </div>
                 <!-- Add more list items as needed -->
@@ -173,11 +166,12 @@
     </div>
     <script>
         function fetchData() {
-            fetch('/detectedsign')
+            fetch('/sign')
                 .then(response => response.json())
                 .then(data => {
                     // Update the content of the element with the fetched data
-                    document.getElementById('detectedsign').innerHTML = data.sign;
+                    document.getElementById('sign').innerHTML = data.sign;
+                    document.getElementById('sign-image').src = '/static/images/'+data.sign+".jpg"
                 })
                 .catch(error => console.error('Error fetching dynamic data:', error));
         }

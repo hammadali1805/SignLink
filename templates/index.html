@@ -1,12 +1,731 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/ico" href="./static/images/favicon.ico">
-    <title>SignLink | Home</title>
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/ico" href="static/index/assets/images/favicon.ico">
+
+
+    <title>Sign Link | Home</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/index/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!--
+
+TemplateMo 570 Chain App Dev
+
+https://templatemo.com/tm-570-chain-app-dev
+
+-->
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/index/assets/css/templatemo-chain-app-dev.css">
+    <link rel="stylesheet" href="static/index/assets/css/animated.css">
+    <link rel="stylesheet" href="static/index/assets/css/owl.css">
+
+  </head>
+
 <body>
-    
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="templates/index.html" class="logo">
+              <img src="static/index/assets/images/logo.png" alt="Chain App Dev" height="75px" width="150px"/>
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="#services">Services</a></li>
+              <li class="scroll-to-section"><a href="#about">About</a></li>
+              <li class="scroll-to-section"><a href="#pricing">Pricing</a></li>
+              <li class="scroll-to-section"><a href="#newsletter">Newsletter</a></li>
+              <li><div class="gradient-button"><a id="modal_trigger" href="#modal"><i class="fa fa-sign-in-alt"></i> Sign In Now</a></div></li> 
+            </ul>        
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+  
+  <div id="modal" class="popupContainer" style="display:none;">
+    <div class="popupHeader">
+        <span class="header_title">Login</span>
+        <span class="modal_close"><i class="fa fa-times"></i></span>
+    </div>
+
+    <section class="popupBody">
+        <!-- Social Login -->
+        <div class="social_login">
+            <div class="">
+                <a href="#" class="social_box fb">
+                    <span class="icon"><i class="fab fa-facebook"></i></span>
+                    <span class="icon_title">Connect with Facebook</span>
+
+                </a>
+
+                <a href="#" class="social_box google">
+                    <span class="icon"><i class="fab fa-google-plus"></i></span>
+                    <span class="icon_title">Connect with Google</span>
+                </a>
+            </div>
+
+            <div class="centeredText">
+                <span>Or use your Email address</span>
+            </div>
+
+            <div class="action_btns">
+                <div class="one_half"><a href="#" id="login_form" class="btn">Login</a></div>
+                <div class="one_half last"><a href="#" id="register_form" class="btn">Sign up</a></div>
+            </div>
+        </div>
+
+        <!-- Username & Password Login form -->
+        <div class="user_login">
+            <form>
+                <label>Email / Username</label>
+                <input type="text" />
+                <br />
+
+                <label>Password</label>
+                <input type="password" />
+                <br />
+
+                <div class="checkbox">
+                    <input id="remember" type="checkbox" />
+                    <label for="remember">Remember me on this computer</label>
+                </div>
+
+                <div class="action_btns">
+                    <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
+                    <div class="one_half last"><a href="/home" class="btn btn_red">Login</a></div>
+                </div>
+            </form>
+
+            <a href="#" class="forgot_password">Forgot password?</a>
+        </div>
+
+        <!-- Register Form -->
+        <div class="user_register">
+            <form>
+                <label>Full Name</label>
+                <input type="text" />
+                <br />
+
+                <label>Email Address</label>
+                <input type="email" />
+                <br />
+
+                <label>Password</label>
+                <input type="password" />
+                <br />
+
+                <div class="checkbox">
+                    <input id="send_updates" type="checkbox" />
+                    <label for="send_updates">Send me occasional email updates</label>
+                </div>
+
+                <div class="action_btns">
+                    <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
+                    <div class="one_half last"><a href="/home" class="btn btn_red">Register</a></div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <h2>SignLink: Learn, Practice & Communicate </h2>
+                    <p>A fully integrated ecosystem for people who want to learn and communicate with sign language, we focus to educate them from a young age and to help them throughout thier lives. It will change their perception for the world and will enhance their productivity.</p>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="white-button first-button scroll-to-section">
+                      <a href="#contact">Get for iOS <i class="fab fa-apple"></i></a>
+                    </div>
+                    <div class="white-button scroll-to-section">
+                      <a href="#contact">Get for Android <i class="fab fa-google-play"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="static/index/assets/images/slider-dec.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="services" class="services section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h4><em>Empowering Communities with Sign Language Accessibility</em></h4>
+            <img src="static/index/assets/images/heading-line-dec.png" alt="">
+            <p>As per the data collected from WHO about 5% of the total world population which constitute to be 360 million suffer from hearing loss and probably they can suffer muteness too and number of people who know sign language are decreasing day by day, we are not so far from the day when no one will know sign language except the one who needs it the most. So to counter this problem we are aiming to create such an app which will make everyone familiar to sign language.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="service-item first-service">
+            <div class="icon"></div>
+            <h4>Learn</h4>
+            <p>Our comprehensive lessons cover everything from basic vocabulary to advanced expressions, ensuring you gain proficiency at your own pace.</p>
+            <div class="text-button">
+              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="service-item second-service">
+            <div class="icon"></div>
+            <h4>Practice</h4>
+            <p>Practice sign language with AI chatbots and train custom signs to learn standard signs uniquely and effectively.</p>
+            <div class="text-button">
+              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="service-item third-service">
+            <div class="icon"></div>
+            <h4>Communicate</h4>
+            <p>Unlock a world of communication opportunities as you confidently express yourself through sign language, breaking down barriers.</p>
+            <div class="text-button">
+              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="service-item fourth-service">
+            <div class="icon"></div>
+            <h4>Translate</h4>
+            <p>Real-time sign language translation to text and speech in multiple languages including Hindi, English, French, etc.</p>
+            <div class="text-button">
+              <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="about" class="about-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center">
+          <div class="section-heading">
+            <h4>About <em>What We Do</em> &amp; Who We Are</h4>
+            <img src="static/index/assets/images/heading-line-dec.png" alt="">
+            <p>We are dedicated to bridging the gap in sign language communication. With 360 million people globally suffering from hearing loss, our mission is urgent. Our innovative app aims to educate and empower users of all ages, fostering a fully integrated ecosystem for learning and communication, transforming perceptions and enhancing productivity.</p>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="box-item">
+                <h4><a href="#">Sign Language Tutorials</a></h4>
+                <p>Easy to follow tutorials.</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box-item">
+                <h4><a href="#">AI Chatbot</a></h4>
+                <p>Practice with Chatbot</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box-item">
+                <h4><a href="#">Engage with Community</a></h4>
+                <p>Communicate on video calls</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box-item">
+                <h4><a href="#">Translate your Signs</a></h4>
+                <p>Real-time signs to text and speech.</p>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <p>Our app offers a transformative solution for individuals worldwide facing hearing loss, our tool equips users with essential sign language skills. By promoting inclusivity and accessibility, we empower users to connect more meaningfully and contribute to a more inclusive society.</p>
+              <div class="gradient-button">
+                <a href="#">Start 14-Day Free Trial</a>
+              </div>
+              <span>*No Credit Card Required</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="right-image">
+            <img src="static/index/assets/images/about-right-dec.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="clients" class="the-clients">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>Check What <em>The Clients Say</em> About Our App</h4>
+            <img src="static/index/assets/images/heading-line-dec.png" alt="">
+            <p>Discover why users rave about our app's transformative impact on communication and accessibility</p>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="naccs">
+            <div class="grid">
+              <div class="row">
+                <div class="col-lg-7 align-self-center">
+                  <div class="menu">
+                    <div class="first-thumb active">
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <h4>Hammad Ali</h4>
+                            <span class="date">30 January 2024</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                            <span class="category">Uttar Pradesh</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 col-12">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <span class="rating">4.8</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <h4>Md Ghulam</h4>
+                            <span class="date">02 February 2024</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                            <span class="category">Kashmir</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 col-12">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <span class="rating">4.5</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <h4>Rajat Sharma</h4>
+                            <span class="date">05 February 2024</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                            <span class="category">Rajasthan</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 col-12">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <span class="rating">4.7</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <h4>Random User</h4>
+                            <span class="date">20 February 2024</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                            <span class="category">Gujrat</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 col-12">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <span class="rating">3.9</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="last-thumb">
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <h4>Afaaf Siddiqui</h4>
+                            <span class="date">29 February 2024</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                            <span class="category">Bihar</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 col-12">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <span class="rating">4.3</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+                <div class="col-lg-5">
+                  <ul class="nacc">
+                    <li class="active">
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="client-content">
+                                <img src="static/index/assets/images/quote.png" alt="">
+                                <p>“This app revolutionized how I communicate! Easy-to-use interface, comprehensive lessons, and real-time translation make learning sign language a breeze.”</p>
+                              </div>
+                              <div class="down-content">
+                                <img src="static/index/assets/images/hammad.jpg" alt="">
+                                <div class="right-content">
+                                  <h4>Hammad Ali</h4>
+                                  <span>Uttar Pradesh</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="client-content">
+                                <img src="static/index/assets/images/quote.png" alt="">
+                                <p>“This app has truly transformed my interactions, making communication inclusive and effortless. Highly recommended for all!"”</p>
+                              </div>
+                              <div class="down-content">
+                                <img src="static/index/assets/images/ghulam.jpg" alt="">
+                                <div class="right-content">
+                                  <h4>Md Ghulam</h4>
+                                  <span>Kashmir</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="client-content">
+                                <img src="static/index/assets/images/quote.png" alt="">
+                                <p>“As a parent of a child with hearing impairment, this app has been a game-changer. It's user-friendly, educational, and fosters meaningful connections effortlessly.”</p>
+                              </div>
+                              <div class="down-content">
+                                <img src="static/index/assets/images/rajat.png" alt="">
+                                <div class="right-content">
+                                  <h4>Rajat Sharma</h4>
+                                  <span>Rajasthan</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="client-content">
+                                <img src="static/index/assets/images/quote.png" alt="">
+                                <p>“I've always wanted to learn sign language, and this app made it possible. It's intuitive, engaging, and has opened up a whole new world of communication for me.”</p>
+                              </div>
+                              <div class="down-content">
+                                <img src="static/index/assets/images/client-image.jpg" alt="">
+                                <div class="right-content">
+                                  <h4>Random User</h4>
+                                  <span>Gujrat</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="client-content">
+                                <img src="static/index/assets/images/quote.png" alt="">
+                                <p>“This app exceeded my expectations! The personalized learning experience and interactive features make mastering sign language enjoyable and accessible for everyone."”</p>
+                              </div>
+                              <div class="down-content">
+                                <img src="static/index/assets/images/afaaf.jpg" alt="">
+                                <div class="right-content">
+                                  <h4>Afaaf Siddiqui</h4>
+                                  <span>Bihar</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>          
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="pricing" class="pricing-tables">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>We Have The <em>Best Prices</em> You Can Get</h4>
+            <img src="static/index/assets/images/heading-line-dec.png" alt="">
+            <p>Unlock limitless communication potential with our subscription packages. Choose the plan that suits your learning journey and join our inclusive community today.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing-item-regular">
+            <span class="price">$5</span>
+            <h4>Standard Plan</h4>
+            <div class="icon">
+              <img src="static/index/assets/images/pricing-table-01.png" alt="">
+            </div>
+            <ul>
+              <li>Complete Sign Language</li>
+              <li>AI Chatbot</li>
+              <li>Commumity Forum</li>
+              <li>Sign To Text (only English)</li>
+              <li class="non-function">Sign TO Text (Multiple languages)</li>
+              <li class="non-function">Sign To Speech (only English)</li>
+              <li class="non-function">Sign To Speech (Multiple languages)</li>
+              <li class="non-function">Custom Sign Feeding</li>
+            </ul>
+            <div class="border-button">
+              <a href="#">Purchase This Plan Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing-item-pro">
+            <span class="price">$10</span>
+            <h4>Business Plan</h4>
+            <div class="icon">
+              <img src="static/index/assets/images/pricing-table-01.png" alt="">
+            </div>
+            <ul>
+              <li>Complete Sign Language</li>
+              <li>AI Chatbot</li>
+              <li>Commumity Forum</li>
+              <li>Sign To Text (only English)</li>
+              <li>Sign TO Text (Multiple languages)</li>
+              <li>Sign To Speech (only English)</li>
+              <li class="non-function">Sign To Speech (Multiple languages)</li>
+              <li class="non-function">Custom Sign Feeding</li>
+            </ul>
+            <div class="border-button">
+              <a href="#">Purchase This Plan Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing-item-regular">
+            <span class="price">$15</span>
+            <h4>Premium Plan</h4>
+            <div class="icon">
+              <img src="static/index/assets/images/pricing-table-01.png" alt="">
+            </div>
+            <ul>
+              <li>Complete Sign Language</li>
+              <li>AI Chatbot</li>
+              <li>Commumity Forum</li>
+              <li>Sign To Text (only English)</li>
+              <li>Sign TO Text (Multiple languages)</li>
+              <li>Sign To Speech (only English)</li>
+              <li>Sign To Speech (Multiple languages)</li>
+              <li>Custom Sign Feeding</li>
+            </ul>
+            <div class="border-button">
+              <a href="#">Purchase This Plan Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <footer id="newsletter">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>Join our mailing list to receive the news &amp; latest trends</h4>
+          </div>
+        </div>
+        <div class="col-lg-6 offset-lg-3">
+          <form id="search" action="#" method="GET">
+            <div class="row">
+              <div class="col-lg-6 col-sm-6">
+                <fieldset>
+                  <input type="address" name="address" class="email" placeholder="Email Address..." autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6 col-sm-6">
+                <fieldset>
+                  <button type="submit" class="main-button">Subscribe Now <i class="fa fa-angle-right"></i></button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>Contact Us</h4>
+            <p>Jamia Millia Islamia University, Jamia Nagar, 
+              Okhla, New Delhi, 110025</p>
+            <p><a href="#">+91 95482 99969</a></p>
+            <p><a href="#">hammadalipbt18@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>About Us</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#clients">Testimonials</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+            </ul>
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#clients">Testimonials</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>Features</h4>
+            <ul>
+              <li><a href="#">Reliable Course</a></li>
+              <li><a href="#">AI Chatbot</a></li>
+              <li><a href="#">Community</a></li>
+              <li><a href="#">Sign to Text</a></li>
+              <li><a href="#">Sign to Speech</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">Multi Lingual</a></li>
+              <li><a href="#">User Friendly UI</a></li>
+              <li><a href="#">Fast and Effective</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>About Our Company</h4>
+            <div class="logo">
+              <img src="static/index/assets/images/white-logo.png" alt="" height="70px">
+            </div>
+            <p>We focus to educate mutes and deafs from a young age.</p>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="copyright-text">
+            <p>Copyright © PARADOX. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="static/index/vendor/jquery/jquery.min.js"></script>
+  <script src="static/index/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/index/assets/js/owl-carousel.js"></script>
+  <script src="static/index/assets/js/animation.js"></script>
+  <script src="static/index/assets/js/imagesloaded.js"></script>
+  <script src="static/index/assets/js/popup.js"></script>
+  <script src="static/index/assets/js/custom.js"></script>
 </body>
 </html>

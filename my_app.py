@@ -15,6 +15,10 @@ from utils import CvFpsCalc
 from model import KeyPointClassifier
 from model import PointHistoryClassifier
 
+
+
+
+
 app=Flask(__name__)
 selected_sign_index = 0
 no_of_times_matched = 0
@@ -558,6 +562,8 @@ def generate_frames(use_brect=True):
         yield (b'--frame\r\n'+b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n') 
 
 
+
+
 @app.route('/translate')
 def translate():
     return render_template('translate.html')
@@ -565,6 +571,10 @@ def translate():
 @app.route('/learn')
 def learn():
     return render_template('learn.html')
+
+@app.route('/home')
+def home():
+    return render_template('home.html')
 
 @app.route('/')
 def index():

@@ -88,7 +88,7 @@
                 <div class="col">
                     <div class="video"
                         style="width: 65vw; height: 70vh; margin: 10px 10px 10px 10px; border-radius: 20px; border: 2px solid black; overflow: hidden;">
-                        <img src="{{ url_for('video', usecase='learn') }}" width="100%" height="100%" />
+                        <img src="{{ url_for('video', usecase='translate') }}" width="100%" height="100%" />
                     </div>
                     <div class="video"
                     style="width: 65vw; height: 12vh; margin: 10px 0px 10px 10px; align-items: center; justify-content: center; display: flex;">
@@ -101,13 +101,27 @@
         </div>
         <div class="col">
             <div style="margin-top: 10px;">
-                <h3>We Are Learning</h3>
+                <select id="languages">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <option value="it">Italian</option>
+                    <option value="ja">Japanese</option>
+                    <option value="ko">Korean</option>
+                    <option value="pt">Portuguese</option>
+                    <option value="ru">Russian</option>
+                    <option value="zh-CN">Chinese (Simplified)</option>
+                </select>
+            </div>
+            <div style="margin-top: 10px;">
+                <h3>Translation</h3>
             </div>
             <div style="margin-top: 100px;">
                 <img id="sign-image" src="" alt="img" width="200px" height="200px">
             </div>
             <div style="width: 100%;">
-                <h2 style="text-align: center;" id="sign"></h2>
+                <h2 style="text-align: center;" id="detectedsign"></h2>
             </div>
         <div style="margin-top: 50px;">
             <h4> Points to Remeber: </h4>
@@ -121,68 +135,8 @@
             
         </div>
         </div>
-        <div class="col">
-
-            <div class="container">
-                <div class="row align-items-start">
-                    <div class="col">
-
-                        <div class="scrolling-list" style="overflow-y: auto;">
-                            <div class="list-item" style="align-items: center; justify-content: center;">
-                                <span>
-                                    <h3>Lesson 1</h3>
-                                </span>
-                            </div>
-                            <div class="list-item">
-                                <img src="static/images/Hello.jpg" alt="img">
-                                <span>
-                                    <h3>HELLO</h3>
-                                </span>
-                            </div>
-                            <div class="list-item">
-                                <img src="static/images/Yes.jpg" alt="img">
-                                <span>
-                                    <h3>YES</h3>
-                                </span>
-                            </div>
-                            <div class="list-item">
-                                <img src="static/images/Pointer.jpg" alt="img">
-                                <span>
-                                    <h3>POINTER</h3>
-                                </span>
-                            </div>
-                            <div class="list-item">
-                                <img src="static/images/Ok.jpg" alt="img">
-                                <span>
-                                    <h3>OK</h3>
-                                </span>
-                            </div>
-                            <div class="list-item">
-                                <img src="static/images/Like.jpg" alt="img">
-                                <span>
-                                    <h3>LIKE</h3>
-                                </span>
-                            </div>
-                            <div class="list-item">
-                                <img src="static/images/Victory.jpg" alt="img">
-                                <span>
-                                    <h3>Hack JMI</h3>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-
-                        <form class="d-flex" style="margin-top: 10px;">
-                            <input class="form-control me-2" type="search" placeholder="Search a Sign" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Q</button>
-                        </form>
-                    </div>
-                </div>
 
 
-
-            </div>
         </div>
 
 
@@ -198,15 +152,14 @@
         <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    -->
+    -->    
     <script>
         function fetchData() {
-            fetch('/sign')
+            fetch('/detectedsign')
                 .then(response => response.json())
                 .then(data => {
                     // Update the content of the element with the fetched data
-                    document.getElementById('sign').innerHTML = data.sign;
-                    document.getElementById('sign-image').src = '/static/images/'+data.sign+".jpg"
+                    document.getElementById('detectedsign').innerHTML = data.sign;
                 })
                 .catch(error => console.error('Error fetching dynamic data:', error));
         }
